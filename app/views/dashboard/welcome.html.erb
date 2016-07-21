@@ -1,0 +1,19 @@
+<div class="row">
+  <% @new_articles.each do |article|%>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail custom-thumb">
+        <% if article.image.present? %>
+          <div>
+            <%= image_tag(article.image, :class => "cust-img")%>
+          </div>
+        <% else %>
+          <img style="height: 196.5px;" src="assets/missing.jpg" alt="...">
+        <% end %>
+        <div class="caption" style="height: 125px;">
+          <h4><%= article.title %></h4>
+          <p><a href="<%= article.url %>" class="btn btn-primary" role="button">View article</a></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
