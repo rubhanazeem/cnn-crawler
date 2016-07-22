@@ -15,5 +15,5 @@ steps to setup:
   * Database creation
   * Database initialization
 
-4. check Ruby version
+check Ruby version
 
