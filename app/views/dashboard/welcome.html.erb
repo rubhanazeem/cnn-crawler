@@ -1,7 +1,7 @@
 
 <ul class="nav nav-tabs" data-tabs="tabs">
     <li class="active">
-      <a  href="#1" data-toggle="tab">Both</a>
+      <a  href="#all" data-toggle="tab">All</a>
     </li>
     <li><a href="#trump" data-toggle="tab">Trump</a>
     </li>
@@ -9,7 +9,7 @@
     </li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane fade in active" id="1">
+    <div class="tab-pane fade in active" id="all">
       <% @new_articles.each do |article|%>
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail custom-thumb">
@@ -29,7 +29,7 @@
       <% end %>
     </div>
     <div class="tab-pane fade in" id="clinton">
-      <% @articles.each do |article|%>
+      <% @articles_hillary.each do |article|%>
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail custom-thumb">
             <% if article.image.present? %>
@@ -47,6 +47,26 @@
         </div>
       <% end %>
     </div>
+    <div class="tab-pane fade in" id="trump">
+      <% @articles_trump.each do |article|%>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail custom-thumb">
+            <% if article.image.present? %>
+              <div>
+                <%= image_tag(article.image, :class => "cust-img")%>
+              </div>
+            <% else %>
+              <img style="height: 196.5px;" src="assets/missing.jpg" alt="...">
+            <% end %>
+            <div class="caption" style="height: 125px;">
+              <h4><%= article.title %></h4>
+              <p><a href="<%= article.url %>" class="btn btn-primary" role="button">View article</a></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
   </div>
 
   </div>

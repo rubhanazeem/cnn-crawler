@@ -2,13 +2,13 @@ class DashboardController < ApplicationController
   def welcome
     # Article.fetch_new_articles
     @new_articles = Article.all
-    @articles = Article.where('tag= ? OR tag= ?', 'Clinton', 'both')
+    @articles_hillary = Article.where('tag= ?', 'Clinton')
+    @articles_trump = Article.where('tag= ?', 'Trump')
   end
 
   def refresh
     Article.fetch_new_articles
-    @new_articles = Article.all
-    render template: "welcome"
+    redirect_to root_url
   end
 
   def clinton
