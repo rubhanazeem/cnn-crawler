@@ -2,8 +2,15 @@
 
 This crawler is using Ruby for web crawling. 
 
-This crawler is showing titles of the 25 latest articles about (i.e., with her name in the article) Clinton and the 25 latest articles about Trump on one page (available on CNN- politics/election page). Demo- http://cnn-crawler.herokuapp.com/ 
+This crawler is showing titles of the 25 latest articles about (i.e., with her name in the article) Clinton and the 25 latest articles about Trump on one page (available on CNN- politics/election page: http://us.cnn.com/specials/politics/2016-election). Demo- http://cnn-crawler.herokuapp.com/ 
 
+Dependencies 
+  *require 'open-uri'
+  *require 'nokogiri'
+
+For this task we need articles about Clinton and Trump, with their names in the articles, so on the main page articles are available with their titles that leads to the article page. CNN follows same HTML structure for articles page, that makes it easy to crawl their page. This crawler is fetching all the articles available on their 2016-election page and then check if article title includes their name, then get links to the main article else "open the articles with no name match in article title" and search for the names in article. 
+
+This technique has reduced the processing time by more than 50 percent. As, if names are available in title then article is surely about them and if no name matches in article then crawler go to main article page to search the for required key words.
 
 steps to setup:
 
