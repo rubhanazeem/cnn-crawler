@@ -18,7 +18,7 @@ steps to setup:
 
 2. bundle
 
-3. Rub migrations
+3. Run migrations
   * Database creation
   * Database initialization
 
